@@ -20,6 +20,7 @@ Pub::Pub()
 : Node("pub")
 {
     this->publisher_ = this->create_publisher<rogidrive_msg::msg::RogidriveMessage>("rogidrive_msg", 10);
+    
     timer_ = this->create_wall_timer(
         std::chrono::milliseconds(500),
         [this]() -> void {
