@@ -38,4 +38,20 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME}
 )
 
+
+add_executable(pub_multi src/pub_multi.cpp)
+ament_target_dependencies(pub_multi rclcpp rogidrive_msg)
+
+install(TARGETS
+  pub_multi
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+add_executable(sub_multi src/sub_multi.cpp)
+ament_target_dependencies(sub_multi rclcpp rogidrive_msg)
+
+install(TARGETS
+  sub_multi
+  DESTINATION lib/${PROJECT_NAME}
+)
 ament_package()
